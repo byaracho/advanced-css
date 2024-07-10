@@ -33,20 +33,14 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* clip-path: polygon(50% 0, 100% 100%, 0 100%); triangle, clippy 사이트 참고*/
 }
-
 .header__logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
-
 .header__logo {
   height: 3.5rem;
 }
-
-/* .logo:hover {
-    animation: moveInRight 1s ease-out;
-} */
 .header__text-box {
   position: absolute;
   top: 40%;
@@ -56,6 +50,9 @@ body {
   /* 내부 요소 전부 text이므로 가운데 정렬 위해 center 사용 */
 }
 
+/* .logo:hover {
+    animation: moveInRight 1s ease-out;
+} */
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
@@ -64,7 +61,6 @@ body {
   /* 여기서는 애니메이션 마지막에 shaky한 움직임 방지 */
   margin-bottom: 6rem;
 }
-
 .heading-primary--main {
   display: block;
   font-size: 6rem;
@@ -76,7 +72,6 @@ body {
   /* animation-iteration-count: 3; */
   /* animation-delay: 3s; */
 }
-
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
@@ -123,8 +118,7 @@ body {
     transform: translate(0);
   }
 }
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -136,23 +130,27 @@ body {
   /* btn::after 위함 */
   font-size: 1.6rem;
 }
-
 .btn:hover {
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
-
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  /* 크기를 키움 */
+  opacity: 0;
+}
 .btn:active {
   transform: translateY(-0.1rem);
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
   /* 클릭시 그림자가 덜 보이는 디테일 */
 }
-
 .btn--white {
   background-color: #fff;
   color: #777;
 }
-
+.btn--white::after {
+  background-color: #fff;
+}
 .btn::after {
   content: "";
   display: inline-block;
@@ -167,17 +165,6 @@ body {
   /* 버튼 뒤로 보냄 */
   transition: all 0.4s;
 }
-
-.btn--white::after {
-  background-color: #fff;
-}
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  /* 크기를 키움 */
-  opacity: 0;
-}
-
 .btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
