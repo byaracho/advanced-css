@@ -1,87 +1,4 @@
 @charset "UTF-8";
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-  /* *에 inherit, body에 border-box로 하는 것이 조금 더 낫다고 함 */
-}
-
-html {
-  font-size: 62.5%;
-  /* 10px로 하지 않고 이것도 %로, user의 디폴트 폰트 사이즈를 기준으로 하기 위함*/
-}
-
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
-  box-sizing: border-box;
-}
-
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  /* 상단 고정, 아래 부분이 잘리게 함 */
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  /* clip-path: polygon(50% 0, 100% 100%, 0 100%); triangle, clippy 사이트 참고*/
-}
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-.header__logo {
-  height: 3.5rem;
-}
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  /* 내부 요소 전부 text이므로 가운데 정렬 위해 center 사용 */
-}
-
-/* .logo:hover {
-    animation: moveInRight 1s ease-out;
-} */
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  /* 요소의 뒷쪽에서 앞면이 보이게 할지 정하는 속성이지만 */
-  /* 여기서는 애니메이션 마지막에 shaky한 움직임 방지 */
-  margin-bottom: 6rem;
-}
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  /* animation-iteration-count: 3; */
-  /* animation-delay: 3s; */
-}
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  animation-name: moveInRight;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-}
-
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -118,6 +35,62 @@ body {
     transform: translate(0);
   }
 }
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /* *에 inherit, body에 border-box로 하는 것이 조금 더 낫다고 함 */
+}
+
+html {
+  font-size: 62.5%;
+  /* 10px로 하지 않고 이것도 %로, user의 디폴트 폰트 사이즈를 기준으로 하기 위함*/
+}
+
+body {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /* 요소의 뒷쪽에서 앞면이 보이게 할지 정하는 속성이지만 */
+  /* 여기서는 애니메이션 마지막에 shaky한 움직임 방지 */
+  margin-bottom: 6rem;
+}
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  /* animation-iteration-count: 3; */
+  /* animation-delay: 3s; */
+}
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.75rem;
+  animation-name: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
 .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -170,5 +143,36 @@ body {
   animation-fill-mode: backwards;
   /* 애니메이션 시작 이전에 요소를 invisible하게 하는 간단한 속성*/
 }
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  /* 상단 고정, 아래 부분이 잘리게 함 */
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* clip-path: polygon(50% 0, 100% 100%, 0 100%); triangle, clippy 사이트 참고*/
+}
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+.header__logo {
+  height: 3.5rem;
+}
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  /* 내부 요소 전부 text이므로 가운데 정렬 위해 center 사용 */
+}
+
+/* .logo:hover {
+    animation: moveInRight 1s ease-out;
+} */
 
 /*# sourceMappingURL=style.css.map */

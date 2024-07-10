@@ -1,0 +1,65 @@
+.btn {
+
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .2s;
+        /* initial state에 모든 효과(all)의 지속시간을 지정 */
+        position: relative;
+        /* btn::after 위함 */
+        font-size: 1.6rem;
+    }
+
+    &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            /* 크기를 키움 */
+            opacity: 0;
+        }
+    }
+
+    &:active {
+        transform: translateY(-0.1rem);
+        box-shadow: 0 .5rem 2rem rgba($color-black, .2);
+        /* 클릭시 그림자가 덜 보이는 디테일 */
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-gray-dark;
+
+        &::after {
+            background-color: $color-white;
+        }
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        /* 여기에서 % 기준은 버튼 크기 */
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        /* 버튼 뒤로 보냄 */
+
+        transition: all .4s;
+    }
+
+    &--animated {
+        animation: moveInBottom .5s ease-out .75s;
+        animation-fill-mode: backwards;
+        /* 애니메이션 시작 이전에 요소를 invisible하게 하는 간단한 속성*/
+    }
+}

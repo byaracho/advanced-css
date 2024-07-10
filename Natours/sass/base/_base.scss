@@ -1,0 +1,18 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    /* *에 inherit, body에 border-box로 하는 것이 조금 더 낫다고 함 */
+}
+
+html {
+    // This defines what 1rem is
+    font-size: 62.5%;
+    /* 10px로 하지 않고 이것도 %로, user의 디폴트 폰트 사이즈를 기준으로 하기 위함*/
+}
+
+body {
+    box-sizing: border-box;
+}
