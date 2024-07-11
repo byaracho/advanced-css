@@ -1,0 +1,5 @@
+.section-about {
+    background-color: $color-gray-light-1;
+    padding: 25rem 0;
+    margin-top: -20vh; // 백그라운드 이미지 clip-path 높이에 따라 계산해서 적용
+}
