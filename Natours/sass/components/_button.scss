@@ -1,5 +1,7 @@
 .btn {
 
+    // Change for the <button> element
+    &,
     &:link,
     &:visited {
         text-transform: uppercase;
@@ -12,6 +14,10 @@
         position: relative;
         /* btn::after 위함 */
         font-size: 1.6rem;
+
+        // Change for the <button> element
+        border: none;
+        cursor: pointer;
     }
 
     &:hover {
