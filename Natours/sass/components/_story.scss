@@ -24,12 +24,18 @@
         width: 15rem;
         height: 15rem;
         float: left;
-        // shape-outside는 float, width, height가 명시되어야만 사용 가능
-        // 동그란 쉐이프를 따라 콘텐츠가 흐르도록 함
-        -webkit-shape-outside: circle(50% at 50% 50%);
-        shape-outside: circle(50% at 50% 50%);
-        -webkit-clip-path: circle(50% at 50% 50%);
-        clip-path: circle(50% at 50% 50%);
+        border-radius: 50%;
+        overflow: hidden;
+
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+            // shape-outside는 float, width, height가 명시되어야만 사용 가능
+            // 동그란 쉐이프를 따라 콘텐츠가 흐르도록 함
+            -webkit-shape-outside: circle(50% at 50% 50%);
+            shape-outside: circle(50% at 50% 50%);
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+            border-radius: none;
+        }
 
         // 옆으로 조금 이동
         // &>*로 선택시 캐스케이딩이 되므로 텍스트와 이미지에 각각 적용
